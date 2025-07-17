@@ -1,7 +1,7 @@
 ## RQ1: To what extent can test oracle functionality be automated for autonomous sUAS fuzz testing in a real-world system?
 
 
-We used the following three Fuzz Scenario Templates (FSTs) to automate the test oracle functionality for autonomous sUAS fuzz testing:
+We used the following three Fuzz Scenario Templates to automate the test oracle functionality for autonomous sUAS fuzz testing:
 
 ## Fuzz Scenario Templates
 
@@ -21,6 +21,26 @@ We used the following three Fuzz Scenario Templates (FSTs) to automate the test 
 <br><br><br>
 
 
+### Fuzz Scenario Template Description
+
+The following provices an overview of the elements used in the Fuzz Scenario Templates:
+
+
+| **Field** | **Description** | **Example Values** |
+|-----------|-----------------|--------------------|
+| `FROM_PX4_modes` | List of PX4 flight modes that the system begins in | `"OFFBOARD"`, `"LAND"` |
+| `FROM_APP_states` | List of application-level states to fuzz transitions from | `"TAKEOFF"`, `"HOVERING"` |
+| `RC_INPUT_EVENTS` | Manual input modes injected during the test | `"ALTCTL"`, `"POSCTL"` |
+| `ENVIRONMENT.transition_delay` | Time interval between state and input event | `50-1200 ms` |
+| `ENVIRONMENT.throttle` | Throttle stick position during transition | `"mid"`, `"high"`, `"low"` |
+| `ENVIRONMENT.geofence` | Geofence status during test | `"none"`, `"triggered"` |
+| `ENVIRONMENT.wind` | Wind conditions applied during test | `"none"`, `"gusty"` |
+| `ENVIRONMENT.GPS` | GPS reliability during test | `"none"`, `"degraded"` |
+| `ENVIRONMENT.COMPASS_INTERFERENCE` | Magnetic interference level | `"none"`, `"moderate"` |
+| `MISSION_CONTEXT` | Flight plan or mission scenario under test | `"Flight plan A"` |
+| `CONSTRAINTS.REQUIRES_PX4_MODE` | Specifies required PX4 mode for certain APP states | `"OFFBOARD": ["TAKEOFF", "HOVERING"]` |
+
+<br><br><br>
 
 ## Decision Tree for Test Oracle Automation
 <a name="decision-tree"></a>
