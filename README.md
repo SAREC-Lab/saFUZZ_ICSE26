@@ -31,7 +31,7 @@ SAFUS fills this gap by enabling behaviorally meaningful fuzz testing to detect 
 
 ## Architecture
 
-The SAFUS pipeline consists of two main phases:
+The SAFUS pipeline consists of x main phases:
 
 1. **Hazard Analysis & Test Specification**  
    - Identify relevant hazards related to mode transitions, failsafes, and human controls.  
