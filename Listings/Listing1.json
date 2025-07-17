@@ -1,0 +1,26 @@
+{
+  "FROM_PX4_modes": ["OFFBOARD", "LAND"],
+  "FROM_APP_states": ["TAKEOFF", "FLYING_TO_WAYPOINT", "HOVERING", "LANDING", "DISARMING"],
+  "RC_INPUT_EVENTS": ["ALTCTL", "POSCTL", "STABILIZED"],
+  "ENVIRONMENT": {
+    "transition_delay": {
+      "bands": {
+        "short": { "min": 50, "max": 200 },
+        "medium": { "min": 200, "max": 600 },
+        "long": { "min": 600, "max": 1200 }
+      }
+    },
+    "throttle": ["mid"],
+    "geofence": ["none"],
+    "wind": ["none"],
+    "GPS": ["none"],
+    "COMPASS_INTERFERENCE": ["none"]
+  },
+  "MISSION_CONTEXT": ["Flight plan A"],
+  "CONSTRAINTS": {
+    "REQUIRES_PX4_MODE": {
+      "OFFBOARD": ["TAKEOFF", "FLYING_TO_WAYPOINT*", "HOVERING"],
+      "LAND": ["LANDING", "DISARMING"]
+    }
+  }
+}
