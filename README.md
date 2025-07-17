@@ -42,5 +42,4 @@ The SAFUS pipeline consists of two main phases:
    - Monitor system responses and classify outcomes using decision trees.  
    - Cluster failure cases for anomaly detection.  
    - Generate fault trees highlighting root causes.
-   - 
 *Figure: High-level SAFUS pipeline architecture.*
