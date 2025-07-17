@@ -10,7 +10,7 @@ We used the following three Fuzz Scenario Templates (FSTs) to automate the test 
 | **Fuzz Scenario** | **FSC-1** | **FSC-2** | **FSC-3** |
 |-------------------|-----------|-----------|-----------|
 | **Overview** | Test human control across multiple states | Test Failsafe actions across two states | Test Failsafe actions triggered by geofence |
-| **JSON Specification** | [FSC1.json](FSC1.json) | [FSC2.json](FSC2.json) | [FSC3.json](FSC3.json) |
+| **JSON Specification** | [FSC1.json](Listings/FSC1.json) | [FSC2.json](Listings/FSC2.json) | [FSC3.json](Listings/FSC3.json) |
 | **PX4 Modes** | `OFFBOARD`, `LAND` | `OFFBOARD` | `OFFBOARD` |
 | **Tested App States** | `TAKEOFF`, `FLYING_TO_WAYPOINT`, `HOVERING`, `LANDING`, `DISARMING` | `FLYING_TO_WAYPOINT`, `HOVERING` | `FLYING_TO_WAYPOINT` |
 | **Tested Mode activations** | *RC_INPUT:* `ALTCTL`, `POSCTL`, `STABILIZED` | *RC_INPUT:* `AUTO.LOITER`, `AUTO.LAND`, `AUTO.RTL` | *GEOFENCE ACTIONS:* RTL (+LAND), LAND, WARNING<br>*RC_INPUT_EVENTS:* `ALTCTL`, `POSCTL`, `STABILIZED` |
