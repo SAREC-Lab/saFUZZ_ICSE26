@@ -43,3 +43,12 @@ The SAFUS pipeline consists of x main phases:
    - Cluster failure cases for anomaly detection.  
    - Generate fault trees highlighting root causes.
 *Figure: High-level SAFUS pipeline architecture.*
+
+
+## Test Specifications
+
+You can review the detailed fuzz testing specifications below:
+
+- [Fuzz Scenario 1](Listings/Listing1.json)  
+- [Fuzz Scenario 2](Listings/Listing2.json)  
+- [Fuzz Scenario 3](Listings/Listing3.json)
