@@ -1,6 +1,11 @@
-# Behavioral Fuzzing for Mode Transitions and Failsafes in sUAS
+# Supplemental Material "Behavioral Fuzzing for Mode Transitions and Failsafes in sUAS"
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+_submitted to the 48th International Conference on Software Engineering (ICSE) 2026, Technical Track_
+
+<br><br>
+
+
+
 
 ## Overview
 
@@ -33,6 +38,10 @@ SAFUS fills this gap by enabling behaviorally meaningful fuzz testing to detect 
 
 The SAFUS pipeline consists of x main phases:
 
+![SAFUS Pipeline Architecture](Figures/pipeline.png)
+
+
+
 1. **Hazard Analysis & Test Specification**  
    - Identify relevant hazards related to mode transitions, failsafes, and human controls.  
    - Define fuzz scenario templates specifying states, modes, environment conditions, and control inputs.
@@ -45,10 +54,25 @@ The SAFUS pipeline consists of x main phases:
 *Figure: High-level SAFUS pipeline architecture.*
 
 
-## Test Specifications
+## Validation
 
-You can review the detailed fuzz testing specifications below:
 
-- [Fuzz Scenario 1](Listings/Listing1.json)  
-- [Fuzz Scenario 2](Listings/Listing2.json)  
-- [Fuzz Scenario 3](Listings/Listing3.json)
+To evaluate the effectiveness of SAFUS we used a multi-sUAS application (real name withheld for DB-Review Process - We will provide a link to the SuT and further details upon acceptance of the paper).
+
+
+We evaluate the effectiveness, scalability, and practical utility of SAFUS through three research questions, each accompanied by corresponding supplemental artifacts:
+
+| Research Question | Description | Artifact |
+|-------------------|-------------|----------|
+| **RQ1: Test Oracle Automation** | _To what extent can test oracle functionality be automated for autonomous sUAS fuzz testing in a real-world system?_ <br><br> This examines whether our framework, particularly its use of a Decision Tree, can effectively categorize complex flight outcomes and accurately detect failure cases while filtering out correct behaviors. | [Test Scenarios](RQ1.md#scenarios), [Decision Tree](RQ1.md#decision-tree) |
+| **RQ2: Detection of Transition Errors** | _To what extent can SAFUS detect mode and state-related transition errors in an SuT?_ <br><br> This investigates SAFUS's capability to identify failures in a real-world sUAS system. | [Detected Failures](RQ2.md#failures), [Fault Trees](RQ2.md#fault-trees) |
+| **RQ3: Real-World Reproducibility** | _To what extent are the failures identified by SAFUS in simulation reproducible in real-world flight tests?_ <br><br> This assesses the correspondence between simulation-detected failures and their manifestation in physical flight, examining consistency for both unresolved faults and those marked as mitigated. | [Flight Logs](xxx) |
+
+These artifacts are provided as supplemental material to support the validation of SAFUS.
+
+
+
+
+
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
