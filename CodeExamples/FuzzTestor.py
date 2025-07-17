@@ -57,7 +57,6 @@ SERVICES = [SEND_CMD,GET_PARAM_TOPIC,SET_PARAM_TOPIC]
 #MQTT MISSION SENDER PUB TOPIC and SUB TOPIC for onboard updates 
 MQTT_MISSION="anonymous_topic"
 MQTT_SUB = "anonymous_topic"
-TIME_THRESHOLD=0 # threshold is dynamically generated from a separate file
 
 #BLUEPRINT MISSION
 MISSION_FILE = 'missions/FUZZ_MISSION.json'
@@ -76,7 +75,7 @@ class Fuzz_Testor():
         self.__init_mission_file()
 
         #init value for mission completion time 
-        self.threshold = THRESHOLD
+        self.threshold = 75
         self.timer_lock = threading.Lock()
        
         #needed to adjust timing based on RTL or LAND 
@@ -186,9 +185,9 @@ class Fuzz_Testor():
             print("Connected to MQTT broker successfully!")
             #simple flag to control mqtt on message 
             self.message_sent = False
-            self.mqtt_client.subscribe([("anon",0),("fuzz_mission/ready",1)])
+            self.mqtt_client.subscribe([("update_drone",0),("fuzz_mission/ready",1)])
             self.mqtt_client.message_callback_add("fuzz_mission/ready",self.mqtt_on_mission_ready)
-            self.mqtt_client.message_callback_add("anon",self.mqtt_on_message)
+            self.mqtt_client.message_callback_add("update_drone",self.mqtt_on_message)
             self.mqtt_connected.set()
         else:
             print("Failed to connect to MQTT broker with return code: {}".format(rc))
@@ -369,7 +368,7 @@ class Fuzz_Testor():
                 ulg_file_path = self.docker_interface.get_latest_ulg_file()
                 print('copying from docker...')
                 self.save_contender_file(ulg_file_path)
-                self.write_to_file(ulg_file_path,True,0)
+                self.write_to_file(ulg_file_path,True,self.time_in)
                 self.save_executed_tests()
                 #force auto.land to reset in case of a manual switch
                 #record success and get ready for next mission 
@@ -500,7 +499,7 @@ class Fuzz_Testor():
                         print('[fuzz_testor] time exceeded, restarting state machine')
                         ulg_file_path = self.docker_interface.get_latest_ulg_file()
                         self.save_contender_file(ulg_file_path)
-                        self.write_to_file(ulg_file_path, False,0)
+                        self.write_to_file(ulg_file_path, False,self.time_in)
                         self.save_executed_tests()
                         self.test_complete.set()
                         return 
