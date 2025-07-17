@@ -508,10 +508,10 @@ class Fuzz_Testor():
     Function to copy the log file from the px4 container into the fuzz service container.
     '''
     def save_contender_file(self, ulg_file_path):
-        source_container = "dr-onboardautonomy-px4"
+        source_container = "anon"
         source_id = os.popen(f"docker ps -qf name={source_container}").read().strip()
-        source_path = "/home/user/Firmware/build/px4_sitl_default/logs/"+ulg_file_path
-        destination_path = "/catkin_ws/src/fuzz_test_service/Fuzz/log_analyzer/contender_logs_5"
+        source_path = "anon"+ulg_file_path
+        destination_path = "anon"
         os.system(f"docker cp {source_id}:{source_path} {destination_path}")
 
 
@@ -536,7 +536,7 @@ class Fuzz_Testor():
         json_output = json.dumps(json_object, indent=4)
         self.output = json_output
         # Write the formatted message to the file
-        with open("Fuzz_Test_Logs_NEW.txt", 'a') as f:
+        with open("anon.txt", 'a') as f:
             f.write(json_output)
         return
     
