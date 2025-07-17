@@ -185,9 +185,9 @@ class Fuzz_Testor():
             print("Connected to MQTT broker successfully!")
             #simple flag to control mqtt on message 
             self.message_sent = False
-            self.mqtt_client.subscribe([("update_drone",0),("fuzz_mission/ready",1)])
+            self.mqtt_client.subscribe([("anon",0),("fuzz_mission/ready",1)])
             self.mqtt_client.message_callback_add("fuzz_mission/ready",self.mqtt_on_mission_ready)
-            self.mqtt_client.message_callback_add("update_drone",self.mqtt_on_message)
+            self.mqtt_client.message_callback_add("anon",self.mqtt_on_message)
             self.mqtt_connected.set()
         else:
             print("Failed to connect to MQTT broker with return code: {}".format(rc))
