@@ -140,6 +140,9 @@ class ROS_Interface:
         return 
 
     def _send_command(self, command_type,args,timing=1):
+            '''
+            examples of bandwith testing with different timing intervals based on state
+            '''
             
             if timing == 1:
                 time_ = random.uniform(.1,.5)
