@@ -1,4 +1,4 @@
-# SAFUS: Semantic-Aware Fuzz Testing Framework for sUAS Autonomy
+# Behavioral Fuzzing for Mode Transitions and Failsafes in sUAS
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -15,7 +15,7 @@ This framework enhances safety assurance by systematically generating fuzz scena
 - **Layered state machine analysis** covering application-level logic and autopilot firmware (PX4, ArduPilot).  
 - **Semantic fuzzing pipeline** injecting realistic environmental and timing disturbances.  
 - **Automated generation** of test scenarios from hazard analysis.  
-- **Decision-tree based oracles** to classify test outcomes (success, failure, invalid).  
+- **Decision-tree based labeling** to classify test outcomes (success, failure, invalid).  
 - **Fault tree visualization** for failure root cause investigation.  
 - **Support for simulation-based and real-world testing** of autonomous sUAS.  
 
