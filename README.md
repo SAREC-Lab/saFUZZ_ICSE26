@@ -70,8 +70,8 @@ We evaluate the effectiveness, scalability, and practical utility of SAFUS throu
 
 These artifacts are provided as supplemental material to support the validation of SAFUS.
 
-
-
+> **Code Examples Notice:**  
+> We have included some code examples to demonstrate parts of our code. We have had to leave others out since they are tied to our onboard pilot (to preserve anonymity), and the code base is not executable since we use a custom Docker interface.
 
 
 
