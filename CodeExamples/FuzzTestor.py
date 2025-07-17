@@ -22,24 +22,13 @@ from typing import Tuple
 import sys 
 import glob
 
-# from .DockerInterface import Docker_Interface
-# from .entities import Fuzz_Test
-# from .ROSInterface import ROS_Interface
-# from  .log_analyzer import get_max_deviation
-
-
 #If running directly 
 from .DockerInterface import Docker_Interface
 from .entities import Fuzz_Test
 from .ROSInterface import ROS_Interface
 from  .log_analyzer import get_max_deviation
 
-
-
-#testing
-
-#FLIGHT MODES 
-MODES = ['ALTCTL', 'POSCTL', 'OFFBOARD', 'STABILIZED']
+#some discrete mappings for testing 
 #neutral is 550
 THROTTLE_POS_ALTCTL = [0,260,550,600,615]
 #netural is 435
@@ -56,7 +45,7 @@ MODE_TO_THROTTLE = {
 
 #Flight MODES and STATES
 MODES = ['ALTCTL', 'POSCTL', 'OFFBOARD', 'STABILIZED', 'AUTO.LOITER', 'AUTO.RTL', 'AUTO.LAND']
-STATES = ['Takeoff','BriarWaypoint','BriarWaypoint2','BriarWaypoint3','BriarHover','Land','Disarm','FlyHome']
+STATES = ['anonymous_states']
 
 #MAVROS SERVICE TOPICS 
 SET_PARAM_TOPIC = 'mavros/param/set'
@@ -66,11 +55,11 @@ MAV_STATE = '/mavros/state'
 SERVICES = [SEND_CMD,GET_PARAM_TOPIC,SET_PARAM_TOPIC]
 
 #MQTT MISSION SENDER PUB TOPIC and SUB TOPIC for onboard updates 
-MQTT_MISSION="drone/{}/mission-spec"
-MQTT_SUB = "update_drone"
+MQTT_MISSION="anonymous_topic"
+MQTT_SUB = "anonymous_topic"
 
 #BLUEPRINT MISSION
-MISSION_FILE = 'missions/FUZZ_MISSION2.json'
+MISSION_FILE = 'missions/FUZZ_MISSION.json'
 class Fuzz_Testor():
     def __init__(self,uav_id="Polkadot") -> None:
         #signal.signal(signal.SIGINT, self.signal_handler)
@@ -103,18 +92,6 @@ class Fuzz_Testor():
 
 
         self.output = ""
-
-        # self.test_processing_thread = threading.Thread(target=self.process_tests)
-        # self.test_processing_thread.start()
-
-        '''
-        self.cleanup_dict = {
-            "kill_command": self.kill_cleanup,
-            "mode_switch": self.mode_cleanup,
-            "geofence_params": self.geofence_cleanup,
-            "rtl_altitude": self.rtl_cleanup,
-        }
-        '''
         self.fuzz_type = None 
         self.executed_tests = set()
 
@@ -400,14 +377,10 @@ class Fuzz_Testor():
                 self.message_sent = False 
                 return 
             else:
-                #if we already sent a message don't send a HIT until next mission
                 if self.message_sent:
                     return 
-                #logic for selecting and executing fuzz tests 
                 fuzz_to_execute = self.select_fuzz_test(curr_state)
-                #print('fuzz to execute',fuzz_to_execute)
-                #if no fuzz to execute, means we finished all tests for that particular state, 
-                #now wait for the next state to test.
+ 
                 if not fuzz_to_execute:
                     #print('executed tests',self.executed_tests,self.fuzz_test_combinations)
                     if self.executed_tests == self.fuzz_test_combinations:
@@ -432,14 +405,6 @@ class Fuzz_Testor():
                 self.message_sent = True 
     
     def calculate_rtl_threshold(self):
-        """
-        Calculates the expected total time (in seconds) for an RTL mission.
-        Considers:
-        - Climb time (if below a safe altitude)
-        - Horizontal transit time from current to home position
-        - Descent time from the safe altitude to ground
-        A 20% safety margin is applied.
-        """
         # Try to get the current pose using a quick query.
         current_pose = self.ros_interface.get_current_pose(timeout=.3)
         #print('current pose',current_pose)
@@ -465,18 +430,13 @@ class Fuzz_Testor():
 
         descent_time = safe_altitude / descent_rate
 
-        total_time = (climb_time + horizontal_time + descent_time) * 1.2  # Apply 20% margin.
+        total_time = (climb_time + horizontal_time + descent_time) * 1.2
         print(f"[calculate_rtl_threshold] climb: {climb_time:.2f}s, transit: {horizontal_time:.2f}s, "
             f"descent: {descent_time:.2f}s, total: {total_time:.2f}s")
         return total_time+35
 
 
     def calculate_land_threshold(self):
-        """
-        Calculates the expected total time (in seconds) for a LAND mission.
-        For landing, we only consider the descent time from the current altitude to ground,
-        applying a 20% safety margin.
-        """
         # Query the current pose.
         current_pose = self.ros_interface.get_current_pose(timeout=.3)
         if current_pose is None:
@@ -487,7 +447,7 @@ class Fuzz_Testor():
         current_altitude = current_pose.position.z
         descent_rate = .8  # m/s
 
-        landing_time = (current_altitude / descent_rate) * 2.2 # Apply 20% margin.
+        landing_time = (current_altitude / descent_rate) * 2.2
         print(f"[calculate_land_threshold] altitude: {current_altitude:.2f}m, landing time: {landing_time:.2f}s")
         return landing_time+25
 
@@ -541,17 +501,8 @@ class Fuzz_Testor():
                         self.save_contender_file(ulg_file_path)
                         self.write_to_file(ulg_file_path, False,0)
                         self.save_executed_tests()
-
-                        #from older version...
-                        #self._abort_mission()
-                        #self._cleanup()
-                        #self.mission_time.clear()
-                        #self.mission_abort.clear()
-                        #self.enqueue_mqtt_message()
-                        #self.message_sent = False 
                         self.test_complete.set()
                         return 
-                        # self.critical_lock.release()
 
     '''
     Function to copy the log file from the px4 container into the fuzz service container.
@@ -565,29 +516,7 @@ class Fuzz_Testor():
 
 
     def write_to_file(self, ulg_file_path, mission_status,time_in):
-        '''
-        Logs these things:
-        - the log file path, a tuple with the most recent fuzz test executed, and a Boolean for the mission completion 
-        - Run the log analyser to parse the ulog file for the fuzz mission and add max_deviation, max_altitude,duration, final_landing_state, freefall_occurred
-        '''
-        # # Convert the tuple and JSON message to strings
-        # recent_test_str = str(recent_test)
-        # json_message_str = json.dumps(json_message)
-
-        # # Create a formatted message that includes all parts
-        # # This uses a simple comma-separated format. Adjust the separator if needed.
-        # formatted_message = f"{ulg_file_path}, {recent_test_str}, {json_message_str}, \n"
-
-        # # Write the formatted message to the file
-        # with open("Fuzz_Test_Logs.txt", 'a') as f:
-        #     f.write(formatted_message)
-        # print('Calling Write to file')
-
         max_difference,max_altitude,arm_to_disarm_duration, actually_disarmed, end_land_status, freefall_occurred,thrashing_detected,thrashing_count,nav_frequency_result,drift = get_max_deviation.log_parser(self.fuzz_test.ones_columns)
-
-        # Convert the tuple and JSON message to strings
-        #recent_test_str = str(recent_test)
-
         json_object = {
             "filename": ulg_file_path,
             "max_deviation": max_difference,
@@ -630,9 +559,7 @@ class Fuzz_Testor():
     
     
     '''
-    Functions below gracefully shutdown all running processes and threads.
-    signal_handler - recieves interrupt and shutdowns rospy, docker, and timer
-    shutdown_timer - sets events to exit timer thread
+    gracefully hanlde shutdown
     '''
     def trigger_shutdown(self):
         # os.kill(os.getpid(), signal.SIGINT)
@@ -665,3 +592,4 @@ class Fuzz_Testor():
         print('[shutdown_handler] successfully shutdown docker')
         return
     
+
