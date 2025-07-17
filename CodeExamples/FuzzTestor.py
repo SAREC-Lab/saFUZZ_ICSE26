@@ -57,6 +57,7 @@ SERVICES = [SEND_CMD,GET_PARAM_TOPIC,SET_PARAM_TOPIC]
 #MQTT MISSION SENDER PUB TOPIC and SUB TOPIC for onboard updates 
 MQTT_MISSION="anonymous_topic"
 MQTT_SUB = "anonymous_topic"
+TIME_THRESHOLD=0 # threshold is dynamically generated from a separate file
 
 #BLUEPRINT MISSION
 MISSION_FILE = 'missions/FUZZ_MISSION.json'
@@ -75,7 +76,7 @@ class Fuzz_Testor():
         self.__init_mission_file()
 
         #init value for mission completion time 
-        self.threshold = 75
+        self.threshold = THRESHOLD
         self.timer_lock = threading.Lock()
        
         #needed to adjust timing based on RTL or LAND 
