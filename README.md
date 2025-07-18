@@ -36,7 +36,7 @@ SAFUS fills this gap by enabling behaviorally meaningful fuzz testing to detect 
 
 ## Architecture
 
-The SAFUS pipeline consists of x main phases:
+The SAFUS pipeline consists of 8 main phases:
 
 ![SAFUS Pipeline Architecture](Figures/pipeline.png)
 
