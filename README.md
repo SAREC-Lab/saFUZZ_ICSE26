@@ -17,20 +17,20 @@ This framework enhances safety assurance by systematically generating fuzz scena
 
 ## Features
 
-- **Layered state machine analysis** covering application-level logic and autopilot firmware (PX4, ArduPilot).  
+- **Layered state machine analysis** covering application-level logic and varied autopilot firmware (PX4, ArduPilot).  
 - **Semantic fuzzing pipeline** injecting realistic environmental and timing disturbances.  
 - **Automated generation** of test scenarios from hazard analysis.  
 - **Decision-tree based labeling** to classify test outcomes (success, failure, invalid).  
-- **Fault tree visualization** for failure root cause investigation.  
-- **Support for simulation-based and real-world testing** of autonomous sUAS.  
+- **Fault tree visualization** for root cause analysis.
+- **Support for simulation-based and real-world testing** of sUAS.  
 
 ---
 
 ## Motivation
 
-Autonomous sUAS operate in unpredictable environments and rely on complex state machines for safe and reliable behavior. Existing testing approaches often focus on low-level input mutations or specific functionalities but lack systematic validation of state transitions and failsafe activations under realistic conditions.
+sUAS operate in unpredictable environments and rely on complex state machines for safe and reliable behavior. Existing testing approaches often focus on low-level input mutations or specific functionalities but lack systematic validation of state transitions and failsafe activations under realistic conditions.
 
-SAFUS fills this gap by enabling behaviorally meaningful fuzz testing to detect critical faults early in development.
+SAFUS addresses this challenge by enabling behaviorally meaningful fuzz testing to detect critical faults early in development.
 
 ---
 
