@@ -34,17 +34,17 @@ We identified the following Failures:
 ## Fault Trees
 <a name="fault-trees"></a>
 
-| **ID** | **Fault Tree Image** | **Description** |
-|--------|----------------------|-----------------|
-| F1     | ![F1](Figures/Fault-Trees/F1.png)     |                 |
-| F2     | ![F2](Figures/Fault-Trees/F2.png)     |                 |
-| F3     | ![F3](Figures/Fault-Trees/F3.png)     |                 |
-| F4     | ![F4](Figures/Fault-Trees/F4.png)     |                 |
-| F5     | ![F5](Figures/Fault-Trees/F5.png)     |                 |
-| F6     | ![F6](Figures/Fault-Trees/F6.png)     |                 |
-| F7     | ![F7](Figures/Fault-Trees/F7.png)     |                 |
-| F8     | ![F8](Figures/Fault-Trees/F8.png)     |                 |
-| F9     | ![F9](Figures/Fault-Trees/F9.png)     |                 |
-| F10    | ![F10](Figures/Fault-Trees/F10.png)   |                 |
-| F11    | ![F11](Figures/Fault-Trees/F11.png)   |                 |
+| **ID** | **Fault Tree Image** |
+|--------|----------------------|
+| F1     | ![F1](Figures/Fault-Trees/F1.png)     |                 
+| F2     | ![F2](Figures/Fault-Trees/F2.png)     |                 
+| F3     | ![F3](Figures/Fault-Trees/F3.png)     |                 
+| F4     | ![F4](Figures/Fault-Trees/F4.png)     |                 
+| F5     | ![F5](Figures/Fault-Trees/F5.png)     |                 
+| F6     | ![F6](Figures/Fault-Trees/F6.png)     |                 
+| F7     | ![F7](Figures/Fault-Trees/F7.png)     |                 
+| F8     | ![F8](Figures/Fault-Trees/F8.png)     |                 
+| F9     | ![F9](Figures/Fault-Trees/F9.png)     |                 
+| F10    | ![F10](Figures/Fault-Trees/F10.png)   |                 
+| F11    | ![F11](Figures/Fault-Trees/F11.png)   |                 
 
