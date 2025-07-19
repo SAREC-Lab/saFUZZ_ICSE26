@@ -36,7 +36,7 @@ We identified the following Failures:
 
 | **ID** | **Fault Tree Image** |
 |--------|----------------------|
-| F1     | ![F1](Figures/Fault-Trees/F1.png)     |                 
+| F1     | ![F1](Figures/Fault-Trees/F1.png)     | [Log] (https://review.px4.io/3d?log=47dd2118-69a4-4466-b890-9a2f602867cf)|            
 | F2     | ![F2](Figures/Fault-Trees/F2.png)     |                 
 | F3     | ![F3](Figures/Fault-Trees/F3.png)     |                 
 | F4     | ![F4](Figures/Fault-Trees/F4.png)     |                 
