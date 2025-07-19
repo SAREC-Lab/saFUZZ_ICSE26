@@ -1,5 +1,4 @@
-"filename": "2025-06-24/19_29_06.ulg",
-    "mission": "('AUTO.RTL', 'Takeoff')",
+{   "mission": "('AUTO.RTL', 'Takeoff')",
     "max_deviation": 0.1256866,
     "max_altitude": 13.013203,
     "duration": 74.652,
