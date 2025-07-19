@@ -33,8 +33,8 @@ We identified the following Failures:
 ## Fault Trees
 <a name="fault-trees"></a>
 
-| **ID** | **Fault Tree Image** | **PX4 Log** |
-|--------|----------------------|-------------|
+| **ID** | **Fault Tree Image** |
+|--------|----------------------|
 | F1  | ![F1](Figures/Fault-Trees/F1.png)  |
 | F2  | ![F2](Figures/Fault-Trees/F2.png)  |
 | F3  | ![F3](Figures/Fault-Trees/F3.png)  |
