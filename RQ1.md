@@ -28,7 +28,7 @@ The following provices an overview of the elements used in the Fuzz Scenario Tem
 
 | **Field** | **Description** | **Example Values** |
 |-----------|-----------------|--------------------|
-| `FROM_PX4_modes` | List of PX4 flight modes that the system begins in | `"OFFBOARD"`, `"LAND"` |
+| `FROM_PX4_modes` | List of PX4 flight modes that the system begins in | [`"OFFBOARD"`](https://docs.px4.io/main/en/flight_modes/offboard) , [`"LAND"`](https://docs.px4.io/main/en/flight_modes_mc/land.html)  |
 | `FROM_APP_states` | List of application-level states to fuzz transitions from | `"TAKEOFF"`, `"HOVERING"` |
 | `RC_INPUT_EVENTS` | Manual input modes injected during the test | `"ALTCTL"`, `"POSCTL"` |
 | `ENVIRONMENT.transition_delay` | Time interval between state and input event | `50-1200 ms` |
