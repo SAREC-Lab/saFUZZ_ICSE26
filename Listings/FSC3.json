@@ -7,7 +7,7 @@
     "transition_delay": ["short", "medium", "long"],
     "throttle": ["mid"],
     "geofence": ["active"],
-    "geofence_actions": ["WARN", "RETURN", "TERMINATE"],
+    "geofence_actions": ["WARN", "RETURN", "LAND"],
     "wind": ["none"],
     "GPS": ["none"],
     "COMPASS_INTERFERENCE": ["none"]
