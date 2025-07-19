@@ -19,7 +19,7 @@ TMP_GPS       = "/tmp/gps.sdf"
 EX_IMU = textwrap.dedent("""
   <plugin name="gazebo_imu_plugin" filename="libgazebo_imu_plugin.so">
     <robotNamespace></robotNamespace>
-    <linkName>typhoon_h480/imu_link</linkName>
+    <linkName>anon/imu_link</linkName>
     <imuTopic>/imu</imuTopic>
     <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
     <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
