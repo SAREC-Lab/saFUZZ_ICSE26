@@ -49,5 +49,5 @@ We identified the following Failures:
 | F11 | ![F11](Figures/Fault-Trees/F11.png) | ![F11 Log](Figures/Flight-Log-Examples/f11_log.jpg) |
 
 ## Mission Profiles
-We have included a sample MissionProfile (logged data from the flights) [MissionProfile/](MissionProfile/) directory.
+We have included a sample MissionProfile (logged data from the flights) corresponding to F3 in the [MissionProfile/](MissionProfile/) directory.
 
