@@ -48,3 +48,6 @@ We identified the following Failures:
 | F10 | ![F10](Figures/Fault-Trees/F10.png) | ![F10 Log](Figures/Flight-Log-Examples/f10_log.jpg) |
 | F11 | ![F11](Figures/Fault-Trees/F11.png) | ![F11 Log](Figures/Flight-Log-Examples/f11_log.jpg) |
 
+## Mission Profiles
+We have included a sample MissionProfile (logged data from the flights) [MissionProfiles/](MissionProfiles/) directory.
+
