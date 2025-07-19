@@ -6,7 +6,6 @@
     "final_landing_state": true,
     "freefall_occurred": false,
     "mission_complete": true,
-    "thrashing_detected": true,
     "thrashing_count": 2,
     "nav_frequency_result": {
         "fraction": 0.0,
