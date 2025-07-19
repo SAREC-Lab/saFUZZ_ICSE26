@@ -28,9 +28,9 @@ This framework enhances software system safety assurance by systematically gener
 
 ## Motivation
 
-sUAS operate in unpredictable environments and rely on complex state machines for safe and reliable behavior. Existing testing approaches often focus on low-level input mutations or specific functionalities but lack systematic validation of state transitions and failsafe activations under realistic conditions.
+sUAS operate in unpredictable environments and rely on complex state machines for safe and reliable behavior. Existing testing approaches often focus on low-level input mutations or specific functionalities but lack systematic validation of state transitions and failsafe activations under realistic conditions that can be extended to the real world.
 
-SAFUS addresses this challenge by enabling behaviorally meaningful fuzz testing to detect critical faults early in development.
+SAFUS addresses this challenge by enabling behaviorally meaningful fuzz testing to aid detection of potential faults early in development.
 
 ---
 
