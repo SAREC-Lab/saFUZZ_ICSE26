@@ -267,6 +267,3 @@ class Docker_Interface:
         subprocess.run(cmd, check=True)
         print(f"→ Injected windy world from {LOCAL_WINDY_WORLD}")
 
-    
-
-di = Docker_Interface()
