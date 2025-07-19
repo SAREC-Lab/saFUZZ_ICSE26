@@ -1,0 +1,25 @@
+{
+    "filename": "2025-06-24/19_22_28.ulg",
+    "mission": "('OFFBOARD', 5)",
+    "max_deviation": 21.173469,
+    "max_altitude": 7.1147056,
+    "duration": 33.984,
+    "actually_disarmed": true,
+    "final_landing_state": true,
+    "freefall_occurred": false,
+    "mission_complete": false,
+    "thrashing_count": 3,
+    "nav_frequency_result": {
+        "fraction": 0.02631578947368421,
+        "total_rows": 38,
+        "matching_rows": 1,
+        "pass": false
+    },
+    "drift": 0.009988013766587114,
+    "combination": [
+        "GFACT_Land",
+        "modes_OFFBOARD"
+    ],
+    "combination_index": 12,
+    "anomaly": true
+}
