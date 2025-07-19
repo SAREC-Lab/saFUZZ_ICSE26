@@ -31,7 +31,7 @@ We identified the following Failures:
 
 
 ## Fault Trees
-> **Note:** Flight logs from PX4 coming if accepted *(removed for anonymity)*  
+> **Note:** Flight logs from PX4 attached here if accepted *(removed for anonymity)*  
 <a name="fault-trees"></a>
 
 | **ID** | **Fault Tree Image** |
