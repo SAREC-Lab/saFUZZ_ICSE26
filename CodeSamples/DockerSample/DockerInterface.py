@@ -13,7 +13,7 @@ import textwrap
 PX4_CID       = "anon"
 TY_SDF        = "anon"
 GPS_SDF       = "anon"
-TMP_TY        = "/tmp/typhoon_h480.sdf"
+TMP_TY        = "/tmp/anon.sdf"
 TMP_GPS       = "/tmp/gps.sdf"
 
 EX_IMU = textwrap.dedent("""
