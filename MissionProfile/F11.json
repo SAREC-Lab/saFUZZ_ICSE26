@@ -1,0 +1,28 @@
+
+{
+    "mission": "('AUTO.LOITER', 550, 'Land')",
+    "max_deviation": 0.11603570000000002,
+    "max_altitude": 12.827199,
+    "duration": 74.124,
+    "actually_disarmed": false,
+    "final_landing_state": false,
+    "freefall_occurred": false,
+    "mission_complete": false,
+    "thrashing_count": 3,
+    "nav_frequency_result": {
+        "fraction": 0.06666666666666667,
+        "total_rows": 15,
+        "matching_rows": 1,
+        "pass": false,
+        "offboard_time": 11.24,
+        "start_time": 74.768
+    },
+    "drift": 0,
+    "combination": [
+        "states_Land",
+        "modes_LOITER",
+        "throttle_Mid"
+    ],
+    "combination_index": 8,
+    "anomaly": true
+}
