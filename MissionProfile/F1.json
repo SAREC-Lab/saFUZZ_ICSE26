@@ -1,0 +1,25 @@
+{
+  "filename": "2025-05-20/01_05_20.ulg",
+  "mission": "('Hover','Land')",
+  "max_deviation": 14.09090201,
+  "max_altitude": 20.215166,
+  "duration": 74.76,
+  "actually_disarmed": true,
+  "final_landing_state": false,
+  "freefall_occurred": false,
+  "mission_complete": false,
+  "thrashing_count": 5,
+  "nav_frequency_result": {
+    "fraction": 0.014084507042253521,
+    "total_rows": 142,
+    "matching_rows": 2,
+    "pass": false
+  },
+  "drift": 0,
+  "combination": [
+    "states_Hover",
+    "modes_LAND"
+  ],
+  "combination_index": 12,
+  "anomaly": true
+}
