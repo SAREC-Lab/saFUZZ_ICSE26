@@ -11,14 +11,14 @@ _submitted to the 48th International Conference on Software Engineering (ICSE) 2
 
 SAFUS is an automated fuzz testing pipeline designed to validate the autonomous behavior of small Uncrewed Aerial Systems (sUAS). By targeting mode transitions and failsafe mechanisms in layered sUAS state machines, SAFUS exposes subtle failures with fuzzing that may arise due to environmental disturbances, timing variability, and human interaction.
 
-This framework enhances safety assurance by systematically generating fuzz scenarios, executing tests in simulation, and producing fault trees to aid root cause analysis. 
+This framework enhances software system safety assurance by systematically generating fuzz scenarios, executing tests in simulation, and producing fault trees to aid root cause analysis. 
 
 ---
 
 ## Features
 
 - **Layered state machine analysis** covering application-level logic and varied autopilot firmware (PX4, ArduPilot).  
-- **Semantic fuzzing pipeline** injecting realistic environmental and timing disturbances.  
+- **Fuzzing pipeline** injecting realistic environmental and timing disturbances.  
 - **Automated generation** of test scenarios from hazard analysis.  
 - **Decision-tree based labeling** to classify test outcomes (success, failure, invalid).  
 - **Fault tree visualization** for root cause analysis.
@@ -59,7 +59,7 @@ We evaluate the effectiveness, scalability, and practical utility of SAFUS throu
 These artifacts are provided as supplemental material to support the validation of SAFUS.
 
 > **Code Examples Notice:**  
-> We have included some code examples to demonstrate parts of our automated pipeline. We have left other major files tied to our onboard pilot (to preserve anonymity), and the code base is not directly executable since we use a custom Docker interface and other functions to interface with our SuT (more details to come if accepted).
+> We have included some code samples to demonstrate parts of our automated pipeline. We have left other major files tied to our onboard pilot (to preserve anonymity), and the code base is not directly executable since we use a custom Docker interface and other functions to interface with our SuT (more details to come if accepted).
 
 
 
