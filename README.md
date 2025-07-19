@@ -17,9 +17,9 @@ This framework enhances software system safety assurance by systematically gener
 
 ## Features
 
-- **Layered state machine analysis** covering application-level logic and varied autopilot firmware (PX4, ArduPilot).  
-- **Fuzzing pipeline** injecting realistic environmental and timing disturbances.  
 - **Automated generation** of test scenarios from hazard analysis.  
+- **Layered state machine analysis** covering application-level logic and varied autopilot firmware (PX4, ArduPilot).  
+- **Fuzzing pipeline** injecting realistic environmental and timing disturbances along with RC Inputs.  
 - **Decision-tree based labeling** to classify test outcomes (success, failure, invalid).  
 - **Fault tree visualization** for root cause analysis.
 - **Support for simulation-based and real-world testing** of sUAS.  
