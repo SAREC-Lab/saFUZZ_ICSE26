@@ -131,14 +131,14 @@ class Docker_Interface:
         else:
             print(f"[docker_interface] Failed to start PX4 container {self.px4_container}")
 
-    def restart_airlease(self):
+    def restart_anon(self):
         """Start the PX4 container."""
-        command = f"docker restart {self.airlease}"
+        command = f"docker restart {self.anon}"
         result = os.system(command)
         if result == 0:
-            print(f"[docker_interface] Started airlease container {self.airlease}")
+            print(f"[docker_interface] Started anon container {self.anon}")
         else:
-            print(f"[docker_interface] Failed to start airlease container {self.airlease}")
+            print(f"[docker_interface] Failed to start anon container {self.anon}")
 
     def stop_px4(self):
         """Stop the PX4 container."""
@@ -168,7 +168,7 @@ class Docker_Interface:
             else:
                 print(f'[docker_interface] Error while killing the process: {e}')
         self.stop_px4()
-        self.restart_airlease()
+        self.restart_anon()
         self.start_px4()
     
     def get_latest_ulg_file(self):
