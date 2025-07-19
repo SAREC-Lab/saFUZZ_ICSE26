@@ -1,4 +1,4 @@
-# Supplemental Material "Behavioral Fuzzing for Mode Transitions and Failsafes in sUAS"
+# Supplemental Material "Uncovering Hidden Failures in sUAS Behavior: A Fuzzing-Based Approach"
 
 _submitted to the 48th International Conference on Software Engineering (ICSE) 2026, Technical Track_
 
