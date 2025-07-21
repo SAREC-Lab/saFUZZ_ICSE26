@@ -1,5 +1,4 @@
 {
-    "filename": "2025-06-24/18_54_12.ulg",
     "mission": "('STABILIZED', 435, 'Flying')",
     "max_deviation": 14.270317214099999,
     "max_altitude": 12.730384,
@@ -24,5 +23,5 @@
         "throttle_Mid"
     ],
     "combination_index": 10,
-    "anomaly": True
+    "anomaly": true
 }
