@@ -59,7 +59,7 @@ The chart below shows how we distilled thousands of fuzz tests into a handful of
 ![Overview](Figures/PipelineReduction.png)
 
 
-Below we walk through a concrete example from the **FSC2** scenario to demonstrate how case selection and **Step** 7 from the pipeline (additional test execution) work in practice. 
+Below we walk through a concrete example from the **FSC2** scenario to demonstrate how case selection and **Step** 7 from the pipeline (additional test execution) work in practice. We then give additional examples of selecting cases corresponding to FSC1.
 
 ## 1 – Case Selection from Clusters
 
@@ -108,13 +108,29 @@ From the case `AUTO.LOITER` during `FLYING` (selected after clustering step), we
 - `AUTO.LOITER` during **HOVER** (state before)  
 - `AUTO.LOITER` during **LAND** (state after)  
 
-Each test revealed a separate fault, resulting in multiple fault trees discovered from a single case.
+Each test revealed a separate fault that was later confirmed to be a decision tree related error, demonstrating how multiple fault trees can be discovered from a single case after the clustering phase.
+
 
 ## Final Fault Tree Mappings for FSC2
 
 - **F10** – directly from the clustered case (`AUTO.LOITER` during FLYING)  
 - **F11** – from testing the same case in state **HOVER**  
-- **F9**  – from testing around **LAND** transition in case (`AUTO.LAND` during Hover)
-- **F5**  – from testing an adjacent **RTL** transition in case (`RTL` during Hover)
+- **F9**  – from testing around **LAND** transition in case (`AUTO.LAND` during HOVER)
+- **F5**  – from testing an adjacent **RTL** transition in case (`RTL` during HOVER)
 
+---
+
+Note - Here we provide further details from FSC1 testing -
+### Additional Testing (FSC1 example):
+
+We initially identified three clustering‑derived test cases: `STABILIZED` during **TAKEOFF**, `POSCTL` during **TAKEOFF**, and `STABILIZED` during **FLYING**.  
+Based on the FSC1 listing which includes PX4 modes `OFFBOARD` and `LAND`, we re‑executed tests to cover all `OFFBOARD` sub‑states and `LAND` transition (including `AUTO.LAND`).  
+In doing so, we uncovered a previously missed fault during **HOVER** in `AUTO.LAND`. This fault was later reconfirmed in the FSC2 tests as well.
+
+## Final Fault Tree Mappings for FSC1:
+
+- **F1** – from additional test executing (`LAND` during HOVER).
+- **F2** – from testing case (`POSCTL` during TAKEOFF)   
+- **F6**  – from testing case (`POSCTL` during TAKEOFF)   
+- **F8**  – from testing case (`STABILIZED` during TAKEOFF)
 ---
