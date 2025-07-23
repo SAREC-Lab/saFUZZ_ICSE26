@@ -135,8 +135,8 @@ In doing so, we uncovered a previously missed fault during **HOVER** in `AUTO.LA
 
 ## Final Fault Tree Mappings for FSC1:
 
-- **F1** – from additional test executing (`LAND` during HOVER).
+- **F1** – from additional test executing (`LAND` during HOVER). This was repeated in FSC2.
 - **F2** – directly from the clustered case  (`POSCTL` during TAKEOFF)   
-- **F6**  – from testing around clustered case  (`POSCTL` during TAKEOFF). This was found to be a gps noise induced error.
+- **F6**  – from testing around clustered case  (`POSCTL` during TAKEOFF). This was found to be a gps noise induced error repeated in FSC2.
 - **F8**  – directly from the clustered case (`STABILIZED` during TAKEOFF)
 ---
