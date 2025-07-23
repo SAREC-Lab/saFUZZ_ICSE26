@@ -119,8 +119,8 @@ Each test revealed a separate fault that was later confirmed to be a decision tr
 - **F5**  – from testing an adjacent **RTL** transition in case (`RTL` during HOVER)
 
 **Remarks**  
-- The `AUTO.LAND` during state **HOVER** fault was originally discovered and mapped in FSC1. Although we re‑verified it in FSC2, we did not add it to the FSC2 fault tree because it already exists under FSC1.  
-- The `RTL` faults during both **HOVER** and **FLYING** were also first traced back to GPS noise‑frequency errors (F6) in FSC1. For that reason, they remain mapped to FSC1 rather than being remapped to FSC2.
+- The `AUTO.LAND` during state **HOVER** test case was originally discovered and mapped in FSC1. Although we re‑verified it in FSC2, we did not add it to the FSC2 as a fault tree because it already exists under FSC1.  
+- The `RTL` faults during both **HOVER** and **FLYING** were also first traced back to GPS noise‑frequency errors (F6) in FSC1. For that reason, they remain mapped to FSC1 F6 rather than being remapped to FSC2.
 
 ---
 
