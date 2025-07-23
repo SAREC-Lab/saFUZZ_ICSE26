@@ -51,3 +51,70 @@ We identified the following Failures:
 ## Mission Profiles
 We have included all sample Mission Profiles (logged data from the flights) corresponding to F1-F11 in the [MissionProfile/](MissionProfile/) directory.
 
+---
+
+## Pipeline Reduction: From Scenarios to Fault Trees
+
+The chart below shows how we distilled thousands of fuzz tests into a handful of fault trees through clustering and focused test execution.
+<img width="736" height="571" alt="Screen Shot 2025-07-23 at 2 17 04 PM" src="https://github.com/user-attachments/assets/a2681f5a-8150-4d25-b00f-02f11c17694e" />
+
+
+Below we walk through a concrete example from the **FSC2** scenario to demonstrate how case selection and **Step** 7 from the pipeline (additional test execution) work in practice. 
+
+## 1 – Case Selection from Clusters
+
+1. **Compute distance to centroid** for each failure in a cluster and select:  
+   - **One closest** (most typical failure)  
+   - **One furthest** (edge-case behavior)
+
+2. **Remove repeat tests:** if multiple selected failures share the **same mode** and **same app state**, treat them as **one case**.
+
+### Example with Clustered Data from FSC2:
+
+Note: Each test parameter (timing, GPS noise, and compass interference) was discretized into three levels: Low-1, Mid-2, and High-3.
+
+**Cluster 0**  
+- `STATE HOVER with RC Input LAND` (timing = 2, gps_noise = 2, compass_interference = 2)  | _closest_  
+- `STATE HOVER with RC Input LAND` (timing = 1, gps_noise = 3, compass_interference = 2)  | _furthest_
+
+**Cluster 1**  
+- `STATE HOVER with RC Input RTL`  (timing = 1, gps_noise = 3, compass_interference = 2)  | _closest_  
+- `STATE HOVER with RC Input RTL`  (timing = 1, gps_noise = 3, compass_interference = 1)  | _furthest_
+
+**Cluster 2**  
+- `STATE FLYING with RC Input RTL` (timing = 1, gps_noise = 3, compass_interference = 2)  | _closest_  
+- `STATE FLYING with RC Input RTL` (timing = 2, gps_noise = 3, compass_interference = 2)  | _furthest_
+
+**Cluster 3**  
+- `STATE HOVER with RC Input LAND`    (timing = 1, gps_noise = 3, compass_interference = 2)  | _closest_  
+- `STATE FLYING with RC Input LOITER` (timing = 3, gps_noise = 3, compass_interference = 3)  | _furthest_
+
+**Selected test cases for FSC2:**  
+- `HOVER + LAND`  
+- `HOVER + RTL`  
+- `FLYING + RTL`  
+- `FLYING + LOITER`  
+
+_Result: 4 unique cases instead of 8._
+
+
+## 2 – Testing Around Failure Cases
+
+In **Step** 7 (“Executing additional fuzz tests”)**, we test adjacent states around each selected failure along with timing variations to explore and map fault boundaries prior to truth table construction.
+
+### Additional Testing (FSC2 example):
+
+From the case `AUTO.LOITER` during `FLYING` (selected after clustering step), we also tested:  
+- `AUTO.LOITER` during **HOVER** (state before)  
+- `AUTO.LOITER` during **LAND** (state after)  
+
+Each test revealed a separate fault, resulting in multiple fault trees discovered from a single case.
+
+## Final Fault Tree Mappings for FSC2
+
+- **F10** – directly from the clustered case (`AUTO.LOITER` during FLYING)  
+- **F11** – from testing the same case in **HOVER**  
+- **F9**  – from testing around **LAND** transition in case (`AUTO.LAND` during Hover)
+- **F5**  – from testing an adjacent **RTL** transition in case (`RTL` during Hover)
+
+---
