@@ -113,7 +113,7 @@ Each test revealed a separate fault, resulting in multiple fault trees discovere
 ## Final Fault Tree Mappings for FSC2
 
 - **F10** – directly from the clustered case (`AUTO.LOITER` during FLYING)  
-- **F11** – from testing the same case in **HOVER**  
+- **F11** – from testing the same case in state **HOVER**  
 - **F9**  – from testing around **LAND** transition in case (`AUTO.LAND` during Hover)
 - **F5**  – from testing an adjacent **RTL** transition in case (`RTL` during Hover)
 
