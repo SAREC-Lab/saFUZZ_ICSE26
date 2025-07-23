@@ -58,6 +58,10 @@ We evaluate the effectiveness, scalability, and practical utility of SAFUS throu
 
 These artifacts are provided as supplemental material to support the validation of SAFUS.
 
+## Pipeline Applied to the SuT
+
+This section gives an overview of the full reduction pipeline—from raw fuzz scenarios to fault trees—as applied to our System under Test (SuT). For the flowchart and a step‑by‑step walk‑through, see [Pipeline Reduction: From Scenarios to Fault Trees](RQ2.md#pipeline-reduction).
+
 > **Code Samples Notice:**  
 > We have included some code samples to demonstrate parts of our automated pipeline. You can browse them in the [CodeSamples directory](./CodeSamples/). We have left other major files tied to our onboard pilot (to preserve anonymity), and the code base is not directly executable since we use a custom Docker interface and other functions to interface with our SuT (more details to come if accepted).
 
