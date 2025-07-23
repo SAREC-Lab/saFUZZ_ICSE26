@@ -130,7 +130,7 @@ In doing so, we uncovered a previously missed fault during **HOVER** in `AUTO.LA
 ## Final Fault Tree Mappings for FSC1:
 
 - **F1** – from additional test executing (`LAND` during HOVER).
-- **F2** – from testing case (`POSCTL` during TAKEOFF)   
-- **F6**  – from testing case (`POSCTL` during TAKEOFF)   
-- **F8**  – from testing case (`STABILIZED` during TAKEOFF)
+- **F2** – directly from the clustered case  (`POSCTL` during TAKEOFF)   
+- **F6**  – directly from the clustered case  (`POSCTL` during TAKEOFF)   
+- **F8**  – directly from the clustered case (`STABILIZED` during TAKEOFF)
 ---
