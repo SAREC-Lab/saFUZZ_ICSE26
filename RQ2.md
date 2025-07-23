@@ -100,7 +100,7 @@ _Result: 4 unique cases instead of 8._
 
 ## 2 – Testing Around Failure Cases
 
-In **Step** 7, **(“Executing additional fuzz tests”)**, we test adjacent states around each selected failure along with timing variations to explore and map fault boundaries prior to truth table construction.
+In **Step** 7, **“Executing additional fuzz tests”**, we test adjacent states around each selected failure along with timing variations to explore and map fault boundaries prior to truth table construction.
 
 ### Additional Testing (FSC2 example):
 
