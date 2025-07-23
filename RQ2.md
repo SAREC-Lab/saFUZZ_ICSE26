@@ -56,7 +56,7 @@ We have included all sample Mission Profiles (logged data from the flights) corr
 ## Pipeline Reduction: From Scenarios to Fault Trees
 
 The chart below shows how we distilled thousands of fuzz tests into a handful of fault trees through clustering and focused test execution.
-<img width="736" height="571" alt="Screen Shot 2025-07-23 at 2 17 04 PM" src="https://github.com/user-attachments/assets/a2681f5a-8150-4d25-b00f-02f11c17694e" />
+![Overview](Figures/PipelineReduction.png)
 
 
 Below we walk through a concrete example from the **FSC2** scenario to demonstrate how case selection and **Step** 7 from the pipeline (additional test execution) work in practice. 
