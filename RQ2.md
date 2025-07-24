@@ -122,7 +122,7 @@ Each test revealed a separate fault that was later confirmed to be a decision tr
 
 **Remarks**  
 - The `AUTO.LAND` during state **HOVER** test case was originally discovered and mapped in FSC1. Although we re‑verified it in FSC2, we did not add it to the FSC2 as a fault tree because it already exists under FSC1.  
-- The `RTL` test cases during both **HOVER** and **FLYING** were also first traced back to GPS noise‑frequency errors (F6) in FSC1. For that reason, we left these fauls out of FSC2 since they had the same outcome as FSC1 F6 (i.e., a GPS noise induced error causing thrashing).
+- The `RTL` test cases during both **HOVER** and **FLYING** were also first traced back to GPS noise‑frequency errors (F6) in FSC1. For that reason, we left these faults out of FSC2 since they had the same outcome as FSC1 F6 (i.e., a GPS noise induced error causing thrashing).
 
 ---
 
