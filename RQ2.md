@@ -100,11 +100,11 @@ Note: Each test parameter (timing, GPS noise, and compass interference) was disc
 _Result: 4 unique cases instead of 8._
 
 
-## 2 – Testing Around Failure Cases
+## 2 – Further Testing Around Failure Cases
 
 In **Step** 7, **“Executing additional fuzz tests”**, we test adjacent states around each selected failure along with timing variations to explore and map fault boundaries prior to truth table construction.
 
-### Additional Testing (FSC2 example):
+### FSC2 - Additional Testing:
 
 From the case `AUTO.LOITER` during `FLYING` (selected after clustering step), we also tested:  
 - `AUTO.LOITER` during **HOVER** (state before)  
@@ -122,12 +122,12 @@ Each test revealed a separate fault that was later confirmed to be a decision tr
 
 **Remarks**  
 - The `AUTO.LAND` during state **HOVER** test case was originally discovered and mapped in FSC1. Although we re‑verified it in FSC2, we did not add it to the FSC2 as a fault tree because it already exists under FSC1.  
-- The `RTL` tests during both **HOVER** and **FLYING** were also first traced back to GPS noise‑frequency errors (F6) in FSC1. For that reason, we left these fauls out of FSC2 since they had the same outcome as FSC1 F6 (i.e., a GPS noise induced error causing thrashing).
+- The `RTL` test cases during both **HOVER** and **FLYING** were also first traced back to GPS noise‑frequency errors (F6) in FSC1. For that reason, we left these fauls out of FSC2 since they had the same outcome as FSC1 F6 (i.e., a GPS noise induced error causing thrashing).
 
 ---
 
 Note - Here we provide further details from FSC1 testing -
-### Additional Testing (FSC1 example):
+### FSC1 -  Additional Testing:
 
 We initially identified three clustering‑derived test cases: `STABILIZED` during **TAKEOFF**, `POSCTL` during **TAKEOFF**, and `STABILIZED` during **FLYING**.  
 Based on the FSC1 listing which includes PX4 modes `OFFBOARD` and `LAND`, we re‑executed tests to cover all `OFFBOARD` sub‑states and `LAND` transition (including `AUTO.LAND`).  
@@ -141,4 +141,4 @@ In doing so, we uncovered a previously missed fault during **HOVER** in `AUTO.LA
 - **F8**  – directly from the clustered case (`STABILIZED` during FLYING)
 
 **Remarks**  
-- The failure observed in `STABILIZED` mode during **TAKEOFF** was identical to the one in `POSCTL` mode during **TAKEOFF**. Therefore, we represent it once as **F2** (for `POSCTL` during **TAKEOFF**) and omit the `STABILIZED` case.
+- The test case observed in `STABILIZED` mode during **TAKEOFF** was identical to the one in `POSCTL` mode during **TAKEOFF**. Therefore, we represent it once as **F2** (for `POSCTL` during **TAKEOFF**) and omit the `STABILIZED` case.
