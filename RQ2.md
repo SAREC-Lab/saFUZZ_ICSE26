@@ -129,9 +129,7 @@ Each test revealed a separate fault that was later confirmed to be a decision tr
 Note - Here we provide further details from FSC1 testing -
 ### FSC1 -  Additional Testing:
 
-We initially identified three clustering‑derived test cases: `STABILIZED` during **TAKEOFF**, `POSCTL` during **TAKEOFF**, and `STABILIZED` during **FLYING**.  
-Based on the FSC1 listing which includes PX4 modes `OFFBOARD` and `LAND`, we re‑executed tests to cover all `OFFBOARD` sub‑states and `LAND` transition (including `AUTO.LAND`).  
-In doing so, we uncovered a previously missed fault during **HOVER** in `AUTO.LAND`. This fault was later reconfirmed in the FSC2 tests as well.
+We initially identified three clustering‑derived test cases: `STABILIZED` during **TAKEOFF**, `POSCTL` during **TAKEOFF**, and `STABILIZED` during **FLYING**. However, our decision tree at first was unable to consistently measure `LAND` outcomes. As a result, based on the FSC1 listing which includes PX4 modes `OFFBOARD` and `LAND`, we decided to re‑executed tests isolated tests with `OFFBOARD` and `LAND` transitions (including `AUTO.LAND`) as we followed the design science approach to iteratively update the tree. With the new improvements to the decision tree, we uncovered a previously missed fault during **HOVER** in `AUTO.LAND`. This fault was later reconfirmed in the FSC2 tests as well. This fault was added as F1 as we first discovered it as part of the process in FSC1 in applying Step 7. 
 
 ## Final Fault Tree Mappings for FSC1:
 
