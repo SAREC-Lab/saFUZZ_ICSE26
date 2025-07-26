@@ -72,7 +72,7 @@ After that, we provide examples of selecting cases from **FSC1**, to demonstrate
 
 2. **Remove repeat tests:** if multiple selected failures share the **same mode** and **same app state**, treat them as **one case**.
 
-### Example with Clustered Data from FSC2:
+### Example with Clustered Data from FSC2 Failures:
 
 Note: Each test parameter (timing, GPS noise, and compass interference) was discretized into three levels: Low-1, Mid-2, and High-3.
 
