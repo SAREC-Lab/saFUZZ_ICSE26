@@ -102,15 +102,15 @@ _Result: 4 unique cases instead of 8._
 
 ## 2 – Further Testing Around Failure Cases
 
-In **Step** 7, **“Executing additional fuzz tests”**, we test adjacent states around each selected failure along with timing variations to explore and map fault boundaries prior to truth table construction.
+In **Step** 7, **“Executing additional fuzz tests”**, we test adjacent states around each selected failure along with timing variations to explore and map fault boundaries prior to truth table construction. We also re-execute tests deliberately to check for consistency, and if the decision tree has been refined (as we developed this process iteratively), we run the tests on the updated decision tree as well.
 
 ### FSC2 - Additional Testing:
 
-From the case `AUTO.LOITER` during `FLYING` (selected after clustering step), we also tested:  
+From the case `AUTO.LOITER` during `FLYING` (selected after clustering step), we also re-executed:  
 - `AUTO.LOITER` during **HOVER** (state before)  
 - `AUTO.LOITER` during **LAND** (state after)  
 
-Each test revealed a separate fault that was later confirmed to be a decision tree related error, demonstrating how multiple fault trees can be discovered from a single case after the clustering phase.
+Each test was initially classified as a separate fault that was later confirmed to be a decision tree related error, demonstrating how multiple fault trees can be discovered from a single case after the clustering phase.
 
 
 ## Final Fault Tree Mappings for FSC2
