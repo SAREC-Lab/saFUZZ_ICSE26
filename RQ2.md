@@ -61,7 +61,7 @@ The chart below shows how we distilled thousands of fuzz tests into a handful of
 
 Below, we walk through a concrete example from the **FSC2** scenario to show how case selection and **Step 7** of the pipeline (additional test execution) work in practice. We walk through **FSC2** in particular as there were a higher number of failures discovered in this scenario.
 
-After that, we provide examples of selecting cases from **FSC1**, to demonstrate how **FSC2** confirmed faults that were first identified in **FSC1**. 
+After that, we provide examples of selected cases from **FSC1**, to demonstrate how **FSC2** confirmed faults that were first identified in **FSC1**. 
 
 
 ## 1 – Case Selection from Clusters
