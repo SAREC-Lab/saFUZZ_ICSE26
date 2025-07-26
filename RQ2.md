@@ -106,9 +106,11 @@ In **Step** 7, **“Executing additional fuzz tests”**, we test adjacent state
 
 ### FSC2 - Additional Testing:
 
-From the case `AUTO.LOITER` during `FLYING` (selected after clustering step), we also re-executed:  
-- `AUTO.LOITER` during **HOVER** (state before)  
-- `AUTO.LOITER` during **LAND** (state after)  
+From the case `AUTO.LOITER` during `FLYING` (selected after clustering step), we also re-executed :  
+- `AUTO.LOITER` during **HOVER** (state before `FLYING` ) - this was flagged as a failure but not passed on through the clustering step as it was not the closest nor the furthest from the centroid
+
+and secondly, tested a new case:
+- `AUTO.LOITER` during **LAND** (state after `FLYING`)  
 
 Each test was initially classified as a separate fault that was later confirmed to be a decision tree related error, demonstrating how multiple fault trees can be discovered from a single case after the clustering phase.
 
