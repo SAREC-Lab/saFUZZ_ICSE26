@@ -52,7 +52,7 @@ We evaluate the effectiveness, scalability, and practical utility of SAFUS throu
 
 | Research Question | Description | Artifact |
 |-------------------|-------------|----------|
-| **RQ1: Test Oracle Automation** | _To what extent can test oracle functionality be automated for autonomous sUAS fuzz testing in a real-world system?_ <br><br> This examines whether our framework, particularly its use of a Decision Tree, can effectively categorize complex flight outcomes and accurately detect failure cases while filtering out correct behaviors. | [Test Scenarios](RQ1.md#scenarios), [Decision Tree](RQ1.md#decision-tree) |
+| **RQ1: Test Oracle Effectiveness** | _To what extent can SAFUS identify previously unknown behavioral failures in a real-world sUAS system? _ <br><br> This examines whether our framework, particularly its use of a Decision Tree, can effectively categorize complex flight outcomes and accurately detect failure cases while filtering out correct behaviors. | [Test Scenarios](RQ1.md#scenarios), [Decision Tree](RQ1.md#decision-tree) |
 | **RQ2: Detection of Transition Errors** | _To what extent can SAFUS detect mode and state-related transition errors in an SuT?_ <br><br> This investigates SAFUS's capability to identify failures in a real-world sUAS system. | [Detected Failures](RQ2.md#failures), [Fault Trees](RQ2.md#fault-trees) |
 | **RQ3: Real-World Reproducibility** | _To what extent are the failures identified by SAFUS in simulation reproducible in real-world flight tests?_ <br><br> This assesses the correspondence between simulation-detected failures and their manifestation in physical flight, examining consistency for both unresolved faults and those marked as mitigated. | [Flight Logs](RQ2.md#fault-trees) |
 
