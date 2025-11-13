@@ -1,4 +1,4 @@
-## RQ1: To what extent can test oracle functionality be automated for autonomous sUAS fuzz testing in a real-world system?
+## RQ1: To what extent can SAFUS identify previously unknown behavioral failures in a real-world sUAS system? 
 
 
 We used the following three Fuzz Scenario Templates to automate the test oracle functionality for autonomous sUAS fuzz testing:
