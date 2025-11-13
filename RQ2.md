@@ -64,6 +64,34 @@ Below, we walk through a concrete example from the **FSC2** scenario to show how
 After that, we provide examples of selected cases from **FSC1**, to demonstrate how **FSC2** confirmed faults that were first identified in **FSC1**. 
 
 
+## Features Collected from Testing
+- states — High-level flight state (e.g., Hover, Cruise, Land)
+- modes — Control or mission mode active during the test
+- timing — Internal timing classification for the scenario
+- gps_noise — Estimated GPS signal noise level
+- compass_interference — Detected magnetic interference level
+- result — Test outcome (1 = failure, 0 = success)
+- max_deviation — Maximum horizontal deviation from planned trajectory
+- max_altitude — Maximum altitude reached during the test
+- duration — Total test duration in seconds
+- actually_disarmed — Whether the vehicle fully disarmed at end-of-test
+- nav_fraction — Fraction of navigation messages meeting criteria
+- nav_total_rows — Total navigation samples in the dataset
+- nav_matching_rows — Navigation samples meeting expected thresholds
+- nav_pass — Boolean pass/fail of navigation quality
+- nav_offboard_time — Time spent in offboard navigation mode
+- nav_start_time — Time at which navigation started
+- drift — Drift estimate over the course of the test
+- time_value — Normalized time metric for clustering
+- cluster — Assigned cluster ID after unsupervised clustering
+- distance_sq — Squared distance to the cluster center
+
+Example Feature vector 
+| states | modes | timing | gps_noise | compass_interference | result | max_deviation | max_altitude | duration | actually_disarmed | nav_fraction | nav_total_rows | nav_matching_rows | nav_pass | nav_offboard_time | nav_start_time | drift | time_value | cluster | distance_sq |
+|--------|--------|--------|-----------|-----------------------|---------|----------------|---------------|----------|--------------------|--------------|-----------------|--------------------|----------|--------------------|-----------------|--------|-------------|----------|--------------|
+| Hover  | Land   | 2      | 2         | 2                     | 1       | 14.115949      | 19.105438     | 74.748   | True               | 0.014085     | 142             | 2                  | False    | 11.220            | 13.236          | 0      | 1.2         | 0        | 0.684000     |
+
+
 ## 1 – Case Selection from Clusters
 
 1. **Compute distance to centroid** for each failure in a cluster and select:  
