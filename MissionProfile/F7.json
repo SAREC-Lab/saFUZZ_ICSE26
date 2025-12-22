@@ -1,0 +1,19 @@
+{
+    "mission": "('POSCTL', 1)",
+    "max_deviation": 0.07584720000000011,
+    "max_altitude": 12.809728,
+    "duration": 73.68,
+    "actually_disarmed": true,
+    "final_landing_state": true,
+    "freefall_occurred": false,
+    "mission_complete": true,
+    "thrashing_count": 2,
+    "nav_frequency_result": null,
+    "drift": 0.008241247730080682,
+    "combination": [
+        "GFACT_Warning",
+        "modes_POSCTL"
+    ],
+    "combination_index": 3,
+    "anomaly": true
+}

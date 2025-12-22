@@ -1,0 +1,19 @@
+{
+  "FROM_PX4_modes": ["OFFBOARD"],
+  "FROM_APP_states": ["FLYING_TO_WAYPOINT", "HOVERING"],
+  "ACTIONS": ["AUTO.LOITER", "AUTO.LAND", "AUTO.RTL"],
+  "ENVIRONMENT": {
+    "transition_delay": {
+      "bands": {
+        "short": { "min": 50, "max": 200 },
+        "medium": { "min": 200, "max": 600 }
+      }
+    },
+    "throttle": ["mid"],
+    "geofence": ["none"],
+    "wind": ["none"],
+    "GPS": ["low", "medium", "high"],
+    "COMPASS_INTERFERENCE": ["low", "medium", "high"]
+  },
+  "MISSION_CONTEXT": ["Flight plan B"]
+}

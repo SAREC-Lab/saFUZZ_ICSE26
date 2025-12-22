@@ -1,0 +1,19 @@
+{
+    "mission": "(260, 'Land')",
+    "max_deviation": 0.12056947000000001,
+    "max_altitude": 12.880454,
+    "duration": 74.316,
+    "actually_disarmed": false,
+    "final_landing_state": false,
+    "freefall_occurred": false,
+    "mission_complete": false,
+    "thrashing_count": 3,
+    "nav_frequency_result": null,
+    "drift": 0,
+    "combination": [
+        "states_Land",
+        "throttle_Low"
+    ],
+    "combination_index": 1,
+    "anomaly": true
+}

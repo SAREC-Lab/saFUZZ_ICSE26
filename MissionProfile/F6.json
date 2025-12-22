@@ -1,0 +1,24 @@
+{
+  "mission": "('Land','Takeoff')",
+  "max_deviation": 33.05538505,
+  "max_altitude": 0.5593597,
+  "duration": 74.676,
+  "actually_disarmed": true,
+  "final_landing_state": false,
+  "freefall_occurred": false,
+  "mission_complete": false,
+  "thrashing_count": 5,
+  "nav_frequency_result": {
+    "fraction": 0,
+    "total_rows": 0,
+    "matching_rows": 0,
+    "pass": false
+  },
+  "drift": 0,
+  "combination": [
+    "states_Takeoff",
+    "modes_Land"
+  ],
+  "combination_index": 12,
+  "anomaly": true
+}

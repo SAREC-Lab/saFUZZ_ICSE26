@@ -1,0 +1,27 @@
+{
+    "mission": "('POSCTL', 615, 'Takeoff')",
+    "max_deviation": 0.13130152000000003,
+    "max_altitude": 13.019253,
+    "duration": 74.748,
+    "actually_disarmed": true,
+    "final_landing_state": true,
+    "freefall_occurred": false,
+    "mission_complete": true,
+    "thrashing_count": 2,
+    "nav_frequency_result": {
+        "fraction": 0.0,
+        "total_rows": 0,
+        "matching_rows": 0,
+        "pass": false,
+        "offboard_time": 11.216,
+        "start_time": null
+    },
+    "drift": 0.013847202990286562,
+    "combination": [
+        "states_Takeoff",
+        "modes_POSCTL",
+        "throttle_High"
+    ],
+    "combination_index": 3,
+    "anomaly": true
+}

@@ -1,0 +1,25 @@
+{   "mission": "('AUTO.RTL', 'Takeoff')",
+    "max_deviation": 0.1256866,
+    "max_altitude": 13.013203,
+    "duration": 74.652,
+    "actually_disarmed": true,
+    "final_landing_state": true,
+    "freefall_occurred": false,
+    "mission_complete": true,
+    "thrashing_count": 2,
+    "nav_frequency_result": {
+        "fraction": 0.0,
+        "total_rows": 0,
+        "matching_rows": 0,
+        "pass": false,
+        "offboard_time": 11.216,
+        "start_time": null
+    },
+    "drift": 0.018077799057978017,
+    "combination": [
+        "states_Takeoff",
+        "modes_RTL"
+    ],
+    "combination_index": 13,
+    "anomaly": true
+}
