@@ -34,19 +34,19 @@ We identified the following Failures:
 > **Note:** The full Flight logs from PX4 will attached here if accepted *(removed for anonymity as they potentially reveal location information)*  
 <a name="fault-trees"></a>
 
-| **ID** | **Fault Tree Image** | **Flight Log Example** |
-|--------|----------------------|------------------------|
-| F1  | ![F1](Figures/Fault-Trees/F1.png)  | ![F1 Log](Figures/Flight-Log-Examples/f1_log.jpg)  |
-| F2  | ![F2](Figures/Fault-Trees/F2.png)  | ![F2 Log](Figures/Flight-Log-Examples/f2_log.jpg)  |
-| F3  | ![F3](Figures/Fault-Trees/F3.png)  | ![F3 Log](Figures/Flight-Log-Examples/f3_log.jpg)  |
-| F4  | ![F4](Figures/Fault-Trees/F4.png)  | ![F4 Log](Figures/Flight-Log-Examples/f4_log.jpg)  |
-| F5  | ![F5](Figures/Fault-Trees/F5.png)  | ![F5 Log](Figures/Flight-Log-Examples/f5_log.jpg)  |
-| F6  | ![F6](Figures/Fault-Trees/F6.png)  | ![F6 Log](Figures/Flight-Log-Examples/f6_log.jpg)  |
-| F7  | ![F7](Figures/Fault-Trees/F7.png)  | ![F7 Log](Figures/Flight-Log-Examples/f7_log.jpg)  |
-| F8  | ![F8](Figures/Fault-Trees/F8.png)  | ![F8 Log](Figures/Flight-Log-Examples/f8_log.jpg)  |
-| F9  | ![F9](Figures/Fault-Trees/F9.png)  | ![F9 Log](Figures/Flight-Log-Examples/f9_log.jpg)  |
-| F10 | ![F10](Figures/Fault-Trees/F10.png) | ![F10 Log](Figures/Flight-Log-Examples/f10_log.jpg) |
-| F11 | ![F11](Figures/Fault-Trees/F11.png) | ![F11 Log](Figures/Flight-Log-Examples/f11_log.jpg) |
+| **ID** | **Fault Tree Image** | **Flight Log Example** |   **Log** |
+|:------:|:------:|:-----:|:-----:|
+| F1  | ![F1](Figures/Fault-Trees/F1.png)  | ![F1 Log](Figures/Flight-Log-Examples/f1_log.jpg)  | [LOG](FlightLogs/logxx)|
+| F2  | ![F2](Figures/Fault-Trees/F2.png)  | ![F2 Log](Figures/Flight-Log-Examples/f2_log.jpg)  |[LOG](FlightLogs/logxx)|
+| F3  | ![F3](Figures/Fault-Trees/F3.png)  | ![F3 Log](Figures/Flight-Log-Examples/f3_log.jpg)  |[LOG](FlightLogs/logxx)|
+| F4  | ![F4](Figures/Fault-Trees/F4.png)  | ![F4 Log](Figures/Flight-Log-Examples/f4_log.jpg)  |[LOG](FlightLogs/logxx)|
+| F5  | ![F5](Figures/Fault-Trees/F5.png)  | ![F5 Log](Figures/Flight-Log-Examples/f5_log.jpg)  |[LOG](FlightLogs/logxx)|
+| F6  | ![F6](Figures/Fault-Trees/F6.png)  | ![F6 Log](Figures/Flight-Log-Examples/f6_log.jpg)  |[LOG](FlightLogs/logxx)|
+| F7  | ![F7](Figures/Fault-Trees/F7.png)  | ![F7 Log](Figures/Flight-Log-Examples/f7_log.jpg)  |[LOG](FlightLogs/logxx)|
+| F8  | ![F8](Figures/Fault-Trees/F8.png)  | ![F8 Log](Figures/Flight-Log-Examples/f8_log.jpg)  |[LOG](FlightLogs/logxx)|
+| F9  | ![F9](Figures/Fault-Trees/F9.png)  | ![F9 Log](Figures/Flight-Log-Examples/f9_log.jpg)  |[LOG](FlightLogs/logxx)|
+| F10 | ![F10](Figures/Fault-Trees/F10.png) | ![F10 Log](Figures/Flight-Log-Examples/f10_log.jpg) |[LOG](FlightLogs/logxx)|
+| F11 | ![F11](Figures/Fault-Trees/F11.png) | ![F11 Log](Figures/Flight-Log-Examples/f11_log.jpg) |[LOG](FlightLogs/logxx)|
 
 ## Mission Profiles
 We have included all sample Mission Profiles (logged data from the flights) corresponding to F1-F11 in the [MissionProfile/](MissionProfile/) directory.
