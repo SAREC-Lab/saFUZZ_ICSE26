@@ -43,7 +43,7 @@ We identified the following Failures:
 | F7  | ![F7](Figures/Fault-Trees/F7.png)  | ![F7 Log](Figures/Flight-Log-Examples/f7_log.jpg)  |[LOG](https://review.px4.io/3d?log=e70e95d9-69a5-466c-90e3-9bc5eae1bd11)|
 | F8  | ![F8](Figures/Fault-Trees/F8.png)  | ![F8 Log](Figures/Flight-Log-Examples/f8_log.jpg)  |[LOG]([FlightLogs/logxx](https://review.px4.io/3d?log=38ea9f58-42b0-499c-b5e9-edd4e8fee263))|
 | F9  | ![F9](Figures/Fault-Trees/F9.png)  | ![F9 Log](Figures/Flight-Log-Examples/f9_log.jpg)  |[LOG]([FlightLogs/logxx](https://review.px4.io/3d?log=fde5c8d5-f294-47b6-b787-4779a6dfe02e))|
-| F10 | ![F10](Figures/Fault-Trees/F10.png) | ![F10 Log](Figures/Flight-Log-Examples/f10_log.jpg) |[LOG]((https://review.px4.io/plot_app?log=fde282d7-f051-47b7-9b60-4936cf85c0f9))|
+| F10 | ![F10](Figures/Fault-Trees/F10.png) | ![F10 Log](Figures/Flight-Log-Examples/f10_log.jpg) |[LOG](https://review.px4.io/plot_app?log=fde282d7-f051-47b7-9b60-4936cf85c0f9))|
 | F11 | ![F11](Figures/Fault-Trees/F11.png) | ![F11 Log](Figures/Flight-Log-Examples/f11_log.jpg) |[LOG](https://review.px4.io/plot_app?log=a09b7c15-5525-494e-9b03-94f17b6ae818)|
 
 ## Mission Profiles
